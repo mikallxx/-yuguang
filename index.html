@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台南餘光民宿｜mika 今晚住這裡（非正式官網）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#FFFFFF;
+    --wood:#F9DBC4;
+    --paper:#2C2E3E;
+    --paper-dim:#A16157;
+    --clay:#CC4635;
+    --clay-bright:#DD5C48;
+    --moss:#155B92;
+    --line:rgba(215,168,153,0.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--night);
+    color:var(--paper);
+    font-family:'Noto Sans TC',sans-serif;
+    font-weight:300;
+    line-height:1.75;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}
+  }
+  a{color:inherit;}
+  .mono{font-family:'Space Mono',monospace;}
+  .container{max-width:1040px;margin:0 auto;padding:0 6vw;}
+
+  .photo{
+    position:relative;
+    background:
+      linear-gradient(135deg, rgba(204,70,53,0.10), rgba(44,46,62,0.06)),
+      repeating-linear-gradient(45deg, rgba(44,46,62,0.04) 0 2px, transparent 2px 14px);
+    background-color:var(--wood);
+    display:flex;align-items:flex-end;justify-content:flex-start;
+    color:var(--paper-dim);
+  }
+  .photo::after{
+    content:attr(data-label);
+    font-size:11px;letter-spacing:2px;
+    padding:8px 12px;
+    background:rgba(255,255,255,0.75);
+    border:1px solid var(--line);
+    margin:14px;
+    border-radius:2px;
+  }
+
+  nav{
+    position:sticky;top:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 6vw;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .brand{font-family:'Noto Serif TC',serif;font-weight:900;font-size:17px;letter-spacing:1px;}
+  .brand a.mika-link{color:var(--clay);font-weight:400;font-size:13px;font-family:'Noto Sans TC',sans-serif;border-bottom:1px solid transparent;}
+  .brand a.mika-link:hover,.brand a.mika-link:focus-visible{border-bottom-color:var(--clay);}
+  .navlinks{display:none;gap:26px;font-size:13px;letter-spacing:1px;color:var(--paper-dim);}
+  .navlinks a:hover,.navlinks a:focus-visible{color:var(--clay-bright);}
+  @media(min-width:760px){.navlinks{display:flex;}}
+
+  .hero{position:relative;padding:64px 6vw 56px;}
+  .kicker{font-size:12px;letter-spacing:4px;color:var(--clay);text-transform:uppercase;margin-bottom:18px;}
+  .hero h1{font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(30px,5.6vw,54px);line-height:1.3;color:var(--paper);}
+  .hero h1 a.mika-link{color:var(--clay);font-weight:500;font-size:0.55em;border-bottom:1px solid transparent;}
+  .hero h1 a.mika-link:hover,.hero h1 a.mika-link:focus-visible{border-bottom-color:var(--clay);}
+  .hero-loc{margin-top:16px;font-size:14px;color:var(--paper-dim);letter-spacing:1px;}
+  .unofficial-badge{
+    display:inline-block;
+    font-size:11px;letter-spacing:1.5px;color:var(--night);
+    background:var(--paper);padding:7px 14px;border-radius:20px;font-weight:700;
+    margin-bottom:24px;
+  }
+
+  section{padding:80px 0;border-bottom:1px solid var(--line);}
+  .section-tag{font-size:12px;letter-spacing:3px;color:var(--clay-bright);text-transform:uppercase;margin-bottom:12px;}
+  .section-title{font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(24px,3.2vw,34px);margin-bottom:40px;}
+
+  .ticket{display:grid;grid-template-columns:1fr;background:var(--wood);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  @media(min-width:720px){.ticket{grid-template-columns:2.3fr 1fr;}}
+  .ticket-main{padding:34px 38px;}
+  .ticket-stub{padding:34px 30px;background:rgba(204,70,53,0.06);border-top:1px dashed var(--line);display:flex;flex-direction:column;justify-content:space-between;}
+  @media(min-width:720px){.ticket-stub{border-top:none;border-left:1px dashed var(--line);}}
+  .fact-row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px;}
+  .fact-row:last-child{border-bottom:none;}
+  .fact-row span:first-child{color:var(--paper-dim);letter-spacing:1px;white-space:nowrap;}
+  .fact-row span:last-child{font-weight:500;text-align:right;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .tag{font-size:11px;letter-spacing:1px;padding:5px 12px;border:1px solid var(--moss);color:var(--moss);border-radius:20px;}
+  .rating-badge{font-family:'Space Mono',monospace;font-size:22px;color:var(--clay-bright);margin-bottom:2px;}
+  .rating-sub{font-size:12px;color:var(--paper-dim);margin-bottom:22px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:3px;font-size:13px;letter-spacing:1px;background:var(--clay);color:var(--night);font-weight:700;transition:background 0.2s ease;}
+  .btn:hover,.btn:focus-visible{background:var(--clay-bright);outline:2px solid var(--paper);outline-offset:2px;}
+  .ticket-note{font-size:12px;color:var(--paper-dim);margin-top:10px;line-height:1.6;}
+
+  .tabs{display:flex;gap:8px;margin-bottom:30px;}
+  .tab-btn{padding:10px 20px;font-size:13px;letter-spacing:1px;background:transparent;border:1px solid var(--line);color:var(--paper-dim);border-radius:20px;cursor:pointer;font-family:inherit;}
+  .tab-btn.active{background:var(--clay);border-color:var(--clay);color:var(--night);font-weight:700;}
+  .tab-btn:focus-visible{outline:2px solid var(--clay-bright);outline-offset:2px;}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+
+  .pros-cons{display:grid;gap:22px;grid-template-columns:1fr;margin-bottom:32px;}
+  @media(min-width:640px){.pros-cons{grid-template-columns:1fr 1fr;}}
+  .pc-card{background:var(--wood);border:1px solid var(--line);border-radius:6px;padding:24px 26px;}
+  .pc-card h3{font-family:'Noto Serif TC',serif;font-size:16px;margin-bottom:14px;letter-spacing:1px;}
+  .pc-card.pros h3{color:var(--moss);}
+  .pc-card.cons h3{color:var(--clay-bright);}
+  .pc-card ul{list-style:none;font-size:13.5px;color:var(--paper-dim);}
+  .pc-card li{padding:6px 0;padding-left:18px;position:relative;}
+  .pc-card.pros li::before{content:'＋';position:absolute;left:0;color:var(--moss);}
+  .pc-card.cons li::before{content:'－';position:absolute;left:0;color:var(--clay-bright);}
+  .suited{background:rgba(21,91,146,0.08);border:1px solid var(--line);border-radius:6px;padding:20px 26px;font-size:14px;color:var(--paper-dim);margin-bottom:20px;}
+  .suited b{color:var(--moss);}
+  .surprise{background:rgba(221,92,72,0.08);border:1px solid var(--line);border-radius:6px;padding:20px 26px;font-size:14px;color:var(--paper-dim);}
+  .surprise b{color:var(--clay-bright);}
+
+  .review-text p{font-size:15px;color:var(--paper-dim);margin-bottom:18px;max-width:660px;}
+  .review-text p:first-of-type::first-letter{font-family:'Noto Serif TC',serif;font-size:48px;color:var(--clay-bright);float:left;line-height:0.8;padding:6px 10px 0 0;font-weight:700;}
+  .review-text h4{font-family:'Noto Serif TC',serif;font-size:16px;color:var(--paper);margin:28px 0 10px;}
+
+  .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  @media(min-width:640px){.gallery{grid-template-columns:repeat(4,1fr);}}
+  .gallery .photo{aspect-ratio:3/4;border-radius:4px;}
+  .gallery .photo:nth-child(1){grid-row:span 2;aspect-ratio:auto;}
+
+  .day-tabs{display:flex;gap:10px;margin-bottom:36px;}
+  .day-btn{padding:10px 22px;font-size:13px;letter-spacing:2px;background:transparent;border:1px solid var(--line);color:var(--paper-dim);border-radius:20px;cursor:pointer;font-family:inherit;}
+  .day-btn.active{background:var(--wood);border-color:var(--clay-bright);color:var(--clay-bright);font-weight:700;}
+  .day-panel{display:none;}
+  .day-panel.active{display:block;}
+  .stop{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);}
+  .stop:last-child{border-bottom:none;}
+  .stop-time{font-family:'Space Mono',monospace;font-size:12px;color:var(--clay-bright);padding-top:3px;white-space:nowrap;}
+  .stop-name{font-weight:500;font-size:16px;margin-bottom:6px;}
+  .stop-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--moss);margin-bottom:8px;letter-spacing:0.5px;}
+  .stop-note{font-size:13.5px;color:var(--paper-dim);margin-bottom:8px;}
+  .stop-link{font-size:12px;color:var(--clay-bright);letter-spacing:1px;border-bottom:1px solid var(--clay-bright);padding-bottom:1px;}
+  .stop-link:hover,.stop-link:focus-visible{color:var(--paper);border-color:var(--paper);}
+
+  footer{padding:50px 6vw;text-align:center;font-size:12px;color:var(--paper-dim);letter-spacing:1px;}
+  footer p{margin-top:10px;}
+  footer a.ig{color:var(--clay-bright);font-weight:500;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">餘光．台南漁光島民宿 ｜<a class="mika-link" href="https://www.instagram.com/mika.checkin/reels/" target="_blank" rel="noopener">mika 今晚住這裡</a></div>
+  <div class="navlinks">
+    <a href="#info">入住資訊</a>
+    <a href="#review">心得</a>
+    <a href="#trip">行程</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <div class="unofficial-badge">此頁面為 mika 今晚住這裡 製作，非官方網站</div>
+    <div class="kicker">台南・安平・漁光島</div>
+    <h1>餘光．台南漁光島民宿｜<a class="mika-link" href="https://www.instagram.com/mika.checkin/reels/" target="_blank" rel="noopener">mika 今晚住這裡</a></h1>
+    <div class="hero-loc">日式京都風格・榻榻米與木質空間・距海灘約 600 公尺</div>
+  </div>
+</div>
+
+<section id="info">
+  <div class="container">
+    <div class="section-tag">入住資訊</div>
+    <div class="section-title">帶著走的攻略卡</div>
+
+    <div class="ticket">
+      <div class="ticket-main">
+        <div class="fact-row"><span>地址</span><span>台南市安平區漁光路119巷8號</span></div>
+        <div class="fact-row"><span>入住／退房</span><span>15:00 後入住・11:00 前退房</span></div>
+        <div class="fact-row"><span>管家服務時間</span><span>09:00－18:00</span></div>
+        <div class="fact-row"><span>提供服務</span><span>免費 Wi-Fi・自行車租借</span></div>
+        <div class="fact-row"><span>早餐</span><span>部分方案含台南在地早餐（如牛肉湯）</span></div>
+        <div class="fact-row"><span>房型</span><span>雙人房・四人房・獨立 Villa</span></div>
+        <div class="fact-row"><span>風格</span><span>日式京都風・榻榻米・木質禪風設計</span></div>
+        <div class="tags">
+          <span class="tag">日式京都風格</span>
+          <span class="tag">榻榻米空間</span>
+          <span class="tag">部分房型附庭院／浴缸</span>
+          <span class="tag">距海灘約600公尺</span>
+          <span class="tag">提供自行車</span>
+        </div>
+      </div>
+      <div class="ticket-stub">
+        <div>
+          <div class="rating-badge mono">★ 4.5</div>
+          <div class="rating-sub">Google 評論 348 則</div>
+        </div>
+        <div>
+          <a href="http://www.yu-guang.com.tw/" class="btn" target="_blank" rel="noopener">前往官方網站 ↗</a>
+          <div class="ticket-note">部分 Villa 房型擁有獨立起居空間與庭院景觀，隱私感較高，適合想安排度假型住宿的旅客。房價與即時空房請以官網或訂房平台為準。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="review">
+  <div class="container">
+    <div class="section-tag">入住心得・「岩」房型</div>
+    <div class="section-title">這次住起來怎麼樣？</div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="summary">重點整理</button>
+      <button class="tab-btn" data-tab="full">完整心得</button>
+    </div>
+
+    <div class="tab-panel active" id="summary">
+      <div class="pros-cons">
+        <div class="pc-card pros">
+          <h3>優點</h3>
+          <ul>
+            <li>大片榻榻米通鋪，一家人可以睡在一起，帶小孩不用擔心從床上掉下來</li>
+            <li>房內就能看到日式庭園造景，坐在落地窗旁喝茶吃點心很放鬆</li>
+            <li>浴室與廁所分開，兩人同時使用不會互相影響</li>
+            <li>入住前管家已提前開好冷氣，一進房就是涼爽空間</li>
+            <li>少見提供洗面乳（通常只有洗髮精、沐浴乳）</li>
+          </ul>
+        </div>
+        <div class="pc-card cons">
+          <h3>缺點</h3>
+          <ul>
+            <li>榻榻米通鋪占去大面積空間，玄關可放行李的地方比較有限</li>
+            <li>浴室沖澡區沒有額外燈光，主要靠外側光源，喜歡明亮空間的人可能要適應</li>
+            <li>除濕機運轉聲音較明顯，淺眠者建議睡前先關閉</li>
+          </ul>
+        </div>
+      </div>
+      <div class="suited"><b>適合誰：</b>情侶、夫妻，或喜歡日式氛圍、想安排放鬆小旅行的人。親子入住需留意「岩」房桌子與寢具都直接設置在榻榻米區，小朋友活潑跑跳時要注意避免弄髒。</div>
+      <div class="surprise"><b>小驚喜：</b>一進房發現管家已提前把冷氣開好，台南夏天真的很熱，這個小細節讓入住當下感受很好；另外這也是第一次入住「有提供洗面乳」的民宿。</div>
+    </div>
+
+    <div class="tab-panel" id="full">
+      <div class="review-text">
+        <h4>這次入住的房型</h4>
+        <p>這次入住的是「岩」房型，房內是大片的榻榻米通鋪，也是我們第一次體驗這類型的房型。實際睡了一晚覺得滿舒服的，大家可以一起睡在榻榻米上，有帶小朋友的話，也不用太擔心睡覺時會從床上掉下來。</p>
+
+        <h4>最喜歡的地方</h4>
+        <p>最喜歡的是房間本身的日式氛圍。房內就能看到日式庭園造景，坐在落地窗旁吃點心、喝茶，或只是坐著放空都很舒服。另外浴室與廁所是分開的，兩個人同時使用也不會互相影響，這點很方便。榻榻米通鋪也是這次很特別的住宿體驗，實際睡過一晚後，比原本想像中更喜歡。</p>
+
+        <h4>入住前可以先留意</h4>
+        <p>這次分享主要是以我們實際入住的「岩」房型為主，民宿本身還有其他不同房型可以選擇，因此以下感受不一定適用於所有房型。因為「岩」房型有大面積的榻榻米通鋪，相對來說玄關可以直接放置行李的空間比較有限，如果攜帶大型行李箱，擺放上會稍微受限；雖然也能搬到榻榻米區，但會比較擔心行李箱輪子把榻榻米弄髒。另外浴室沖澡區沒有額外設置燈光，主要靠外側光源照明，這部分比較看個人習慣，我自己會更喜歡明亮一點的盥洗空間。房內的除濕機運轉時聲音會比較明顯，如果是淺眠的人，建議睡覺時可以先關閉。</p>
+
+        <h4>推薦給這些人</h4>
+        <p>入住一晚後，以我自己的感受來說，這裡滿適合情侶、夫妻，或喜歡日式氛圍、想安排一趟放鬆小旅行的人。如果是親子入住，「岩」房有一點可以先留意：桌子、寢具等都直接設置在榻榻米區，如果小朋友比較活潑，吃東西或跑跳時可能需要稍微注意，避免不小心弄髒榻榻米或寢具。民宿本身還有多種不同房型，可以依照入住人數、需求及喜好選擇更適合自己的房型。以上為這次實際入住「岩」房後的個人感受與推薦，每個人的住宿習慣與需求不同，提供給大家作為選擇時的參考。</p>
+
+        <h4>入住後的小驚喜</h4>
+        <p>一進房就發現管家已經提前把冷氣開好了。台南夏天真的很熱，一進房馬上就是涼爽的空間，雖然只是小細節，但入住當下的感受很好。另外這也是我第一次住到「有提供洗面乳」的民宿！一般住宿比較常看到洗髮精、沐浴乳，連洗面乳都準備好真的滿少見，萬一剛好忘記帶也不用擔心。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trip">
+  <div class="container">
+    <div class="section-tag">MIKA 這次怎麼玩</div>
+    <div class="section-title">兩天一夜路線</div>
+
+    <div class="day-tabs">
+      <button class="day-btn active" data-day="day1">Day 1</button>
+      <button class="day-btn" data-day="day2">Day 2</button>
+    </div>
+
+    <div class="day-panel active" id="day1">
+      <div class="stop">
+        <div class="stop-time mono">START</div>
+        <div>
+          <div class="stop-name">台中 → 台南（火車）→ 搭公車前往安平老街</div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-time mono">午餐</div>
+        <div>
+          <div class="stop-name">鄭家蚵仔煎孔雀蛤大王延平總店</div>
+          <div class="stop-meta"><span>★ 2.2（842則）</span><span>10:00－20:30</span><span>安平區延平街117號</span></div>
+          <div class="stop-note">肚子餓隨便找了一家吃，整體吃起來很普通。</div>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJn0rNYrt3bjQRPw8qA0aseUc" class="stop-link" target="_blank" rel="noopener">在地圖上查看 ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-time mono">午後</div>
+        <div>
+          <div class="stop-name">安平樹屋</div>
+          <div class="stop-meta"><span>★ 4.5（6,947則）</span><span>08:30－17:30</span><span>安平區古堡街104號</span></div>
+          <div class="stop-note">帶小孩初次體驗，散步逛逛。</div>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJlynOByF3bjQR_IzNSlgH-Ss" class="stop-link" target="_blank" rel="noopener">在地圖上查看 ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-time mono">點心</div>
+        <div>
+          <div class="stop-name">同記安平豆花（安平2店）</div>
+          <div class="stop-meta"><span>★ 4.3（4,501則）</span><span>週一～五 10:00－22:00・週末 9:00－22:00</span><span>安平區安北路141-6號</span></div>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJYyQ9TRx2bjQRkRAQqhCqZuY" class="stop-link" target="_blank" rel="noopener">在地圖上查看 ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-time mono">點心</div>
+        <div>
+          <div class="stop-name">劉記韭菜盒子</div>
+          <div class="stop-meta"><span>★ 4.3（978則）</span><span>週二～日 14:30－18:30・週一公休</span><span>安平區安北路159號</span></div>
+          <div class="stop-note">買了韭菜盒跟烙餅，排隊時被其他客人推薦要買烙餅，兩種都覺得蠻好吃的，會再回訪當點心吃。</div>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJ-yYIJh12bjQRoTlkjxcNG-Q" class="stop-link" target="_blank" rel="noopener">在地圖上查看 ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-time mono">傍晚</div>
+        <div>
+          <div class="stop-name">搭計程車前往漁光島「餘光民宿」入住</div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-time mono">晚上</div>
+        <div>
+          <div class="stop-name">武聖夜市</div>
+          <div class="stop-meta"><span>★ 4.3（25,664則）</span><span>三、五、六 17:00－24:00（一二四公休）</span></div>
+          <div class="stop-note">搭計程車前往覓食逛夜市。</div>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJc9IkfkJ2bjQRD5USkR9J1ck" class="stop-link" target="_blank" rel="noopener">在地圖上查看 ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-panel" id="day2">
+      <div class="stop">
+        <div class="stop-time mono">上午</div>
+        <div>
+          <div class="stop-name">餘光民宿退房 → 搭計程車前往奇美博物館</div>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-time mono">參觀</div>
+        <div>
+          <div class="stop-name">奇美博物館 ｜《埃及之王：法老》特展</div>
+          <div class="stop-meta"><span>★ 4.7（69,747則）</span><span>週三公休・其餘 09:30－17:30</span><span>仁德區文華路二段66號</span></div>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJq6qqqnp0bjQRpvTHZeYTjKg" class="stop-link" target="_blank" rel="noopener">在地圖上查看 ↗</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-time mono">END</div>
+        <div>
+          <div class="stop-name">結束台南行程，返回台中</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>此頁面為 mika 今晚住這裡 製作，非住宿業者官方網站，資訊僅供參考，正確房價與空房請以官網為準。</div>
+  <p>更多入住實拍與影片：<a class="ig" href="https://www.instagram.com/mika.checkin/reels/" target="_blank" rel="noopener">@mika.checkin</a></p>
+  <p>照片為示範佔位內容，請替換為實際拍攝素材</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+  document.querySelectorAll('.day-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.day-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.day).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
