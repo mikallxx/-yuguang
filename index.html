@@ -1041,7 +1041,7 @@ const CONTENT = {
       '<div class="location-card-sub">'+esc(loc.mapLabel)+'</div>'+
       '<span class="btn on-dark">開啟導航 <span class="arrow">→</span></span>';
     var mapBlock = loc.mapUrl
-      ? '<a class="location-card ripple-btn" href="'+loc.mapUrl+'" target="_blank" rel="noopener noreferrer" aria-label="開啟導航前往'+esc(CONTENT.meta.siteName)+'">'+mapInner+'</a>'
+      ? '<a class="location-card ripple-btn" href="'+loc.mapUrl+'" rel="noopener" aria-label="開啟導航前往'+esc(CONTENT.meta.siteName)+'">'+mapInner+'</a>'
       : '<div class="location-card">'+mapInner+'</div>';
     out.push(
       '<section id="location">'+
@@ -1103,7 +1103,7 @@ const CONTENT = {
             renderStopTitle(s)+
             (meta ? '<div class="stop-meta">'+meta+'</div>' : '')+
             (s.note ? '<div class="stop-note">'+esc(s.note)+'</div>' : '')+
-            (s.mapHref ? '<div class="place-actions"><a class="stop-link ripple-btn" href="'+s.mapHref+'" target="_blank" rel="noopener noreferrer">開啟導航 <span class="arrow">→</span></a></div>' : '')+
+            (s.mapHref ? '<div class="place-actions"><a class="stop-link ripple-btn" href="'+s.mapHref+'" rel="noopener">開啟導航 <span class="arrow">→</span></a></div>' : '')+
           '</div>'+
         '</div>';
       }).join('');
