@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>餘光．台南漁光島民宿｜mika 今晚住這裡（非官方攻略）</title>
-<meta name="description" content="餘光．台南漁光島民宿的非官方住宿攻略，由 mika 今晚住這裡 整理，含房型、入住資訊與交通位置，實際訂房請以官網為準。">
-<meta property="og:title" content="餘光．台南漁光島民宿｜mika 今晚住這裡">
-<meta property="og:description" content="非官方住宿攻略頁面，實際訂房資訊請以官網為準。">
+<title>示範旅宿 The Sample Stay｜一頁式旅宿網站模板</title>
+<meta name="description" content="這是一個可重複套用的一頁式旅宿網站模板，所有文字與圖片皆為示意內容，實際使用前請替換 CONTENT 資料檔。">
+<meta property="og:title" content="示範旅宿 The Sample Stay">
+<meta property="og:description" content="一頁式旅宿網站模板 — 版型示範，非真實旅宿資訊。">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
     *{animation-duration:0.01ms !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
   }
   body{
-    background-color:var(--cream);
+    background:var(--cream);
     color:var(--ink);
     font-family:'Noto Sans TC',sans-serif;
     font-weight:300;
@@ -67,7 +67,7 @@
   .btn.on-dark{background:var(--yellow);color:var(--yellow-ink);border-color:var(--yellow);}
   .btn.on-dark:hover,.btn.on-dark:focus-visible{background:var(--cream);color:var(--ink);border-color:var(--cream);}
 
-  section{background-color:var(--cream);padding:96px 0;border-bottom:1px solid var(--line);scroll-margin-top:88px;}
+  section{padding:96px 0;border-bottom:1px solid var(--line);}
   .section-head{display:flex;flex-direction:column;gap:6px;margin-bottom:52px;max-width:640px;}
   .section-title{font-size:clamp(28px,4.4vw,46px);line-height:1.25;}
 
@@ -109,6 +109,18 @@
   /* ============================================================
      NAV
      ============================================================ */
+  .iab-banner{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:var(--yellow);color:var(--ink);
+    padding:12px 6vw;font-size:13px;line-height:1.5;
+  }
+  .iab-banner span{flex:1;}
+  .iab-close{
+    background:none;border:none;color:var(--ink);font-size:20px;line-height:1;
+    cursor:pointer;padding:0 4px;flex-shrink:0;
+  }
+  .iab-close:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+
   header.site-nav{
     position:sticky;top:0;z-index:60;
     background:rgba(246,241,228,0.92);
@@ -138,12 +150,6 @@
   .nav-mobile.open{display:flex;}
   .nav-mobile a{padding:12px 0;font-size:15px;border-bottom:1px solid var(--line);}
   .nav-mobile .btn{margin-top:16px;justify-content:center;}
-  .nav-mobile-secondary{
-    display:block;text-align:center;margin-top:12px;padding:6px 0;
-    font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:1px;
-    color:var(--ink-dim);border-bottom:none;
-  }
-  .nav-mobile-secondary:hover,.nav-mobile-secondary:focus-visible{color:var(--ink);}
   @media(min-width:860px){
     .nav-links{display:flex;}
     .nav-cta{display:inline-flex;}
@@ -153,33 +159,22 @@
   /* ============================================================
      HERO
      ============================================================ */
-  .hero{background-color:var(--cream);padding:64px 0 0;border-bottom:none;}
-  .hero-copy{background-color:var(--cream);padding:0 var(--gutter);margin-bottom:36px;}
+  .hero{padding:64px 0 0;border-bottom:none;}
+  .hero-copy{padding:0 var(--gutter);margin-bottom:36px;}
   .hero-title{
-    font-size:clamp(38px,10.5vw,54px);
-    line-height:1.22;letter-spacing:0.5px;
-    max-width:none;
+    font-size:clamp(44px,11vw,120px);
+    line-height:0.98;letter-spacing:0.5px;
+    max-width:16ch;
   }
-  .hero-title .title-phrase{white-space:nowrap;}
-  .hero-title .title-break{display:block;}
   .hero-title mark{background:none;color:var(--ink);position:relative;display:inline-block;}
   .hero-title mark::after{
     content:'';position:absolute;left:-2%;right:-2%;bottom:0.06em;height:0.28em;
     background:var(--yellow);z-index:-1;
   }
-  .hero-sub{margin-top:14px;margin-bottom:0;font-size:16px;line-height:1.9;color:var(--ink-dim);max-width:46ch;text-align:left;text-wrap:pretty;}
-  .hero-sub:first-of-type{margin-top:24px;}
+  .hero-sub{margin-top:24px;font-size:16px;color:var(--ink-dim);max-width:46ch;}
   .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
-  .hero-actions .btn{min-width:200px;justify-content:center;text-align:center;}
   .hero-media{position:relative;}
   .hero-media .ph{width:100%;height:52vh;min-height:340px;border-left:none;border-right:none;}
-  .hero--no-image{padding-bottom:64px;}
-  @media(min-width:760px){
-    .hero-title{font-size:clamp(46px,7vw,100px);line-height:1.05;max-width:16ch;}
-    .hero-title .title-break{display:none;}
-  }
-  .scroll-hint--inline{position:static;margin-top:44px;flex-direction:row;align-items:center;}
-  .scroll-hint--inline .line{width:34px;height:1px;}
   .scroll-hint{
     position:absolute;right:var(--gutter);bottom:18px;z-index:2;
     display:flex;flex-direction:column;align-items:center;gap:8px;
@@ -192,14 +187,10 @@
      INTRO
      ============================================================ */
   .intro-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start;}
-  .intro-grid--text-only{max-width:70ch;}
   .intro-media .ph{aspect-ratio:4/5;}
-  .intro-text p{color:var(--ink-dim);font-size:16px;line-height:1.9;margin-bottom:18px;max-width:52ch;}
-  .intro-text p:last-child{margin-bottom:0;}
-  .intro-title-line{white-space:nowrap;}
+  .intro-text p{color:var(--ink-dim);font-size:15.5px;margin-bottom:16px;max-width:52ch;}
   @media(min-width:820px){
     .intro-grid{grid-template-columns:0.9fr 1.1fr;gap:64px;}
-    .intro-grid--text-only{grid-template-columns:1fr;}
   }
 
   /* ============================================================
@@ -238,158 +229,6 @@
   }
 
   /* ============================================================
-     TABSET — generic tab toggle used by review + itinerary
-     ============================================================ */
-  .tab-buttons{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap;}
-  .tab-btn{
-    font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:1px;
-    padding:9px 18px;border:1px solid var(--ink);border-radius:20px;
-    background:transparent;color:var(--ink);cursor:pointer;
-  }
-  .tab-btn.active{background:var(--ink);color:var(--cream);}
-  .tab-btn:focus-visible{outline:2px solid var(--yellow);outline-offset:2px;}
-  .tab-panel{display:none;}
-  .tab-panel.active{display:block;}
-
-  /* ============================================================
-     REVIEW
-     ============================================================ */
-  .pros-cons{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:28px;}
-  @media(min-width:700px){.pros-cons{grid-template-columns:1fr 1fr;}}
-  .pc-card{border:1px solid var(--ink);border-radius:var(--radius);padding:24px 26px;}
-  .pc-card h3{font-size:16px;margin-bottom:14px;}
-  .pc-card.cons h3{color:var(--ink);}
-  .pc-card ul{list-style:none;font-size:13.5px;color:var(--ink-dim);}
-  .pc-card li{padding:6px 0;padding-left:20px;position:relative;}
-  .pc-card.pros li::before{content:'＋';position:absolute;left:0;font-weight:700;}
-  .pc-card.cons li::before{content:'•';position:absolute;left:2px;font-weight:700;}
-  .pc-card.pros{background:var(--cream);}
-  .pc-card.cons{background:transparent;}
-  .review-note{border-left:3px solid var(--yellow);padding:16px 22px;font-size:14px;color:var(--ink-dim);margin-bottom:16px;background:rgba(244,208,0,0.06);}
-  .review-note b{color:var(--ink);font-weight:700;}
-
-  /* -- review-full: editorial article layout -- */
-  .review-full{max-width:720px;}
-  .review-article{
-    display:grid;grid-template-columns:1fr;gap:10px;
-    padding-top:56px;
-  }
-  .review-article:first-child{padding-top:0;}
-  .review-article-num{
-    font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:2px;
-    color:var(--ink-dim);
-  }
-  .review-article h4{
-    font-family:'Noto Serif TC',serif;font-weight:900;
-    font-size:22px;line-height:1.4;margin:0;
-  }
-  .review-article-rule{width:34px;height:2px;background:var(--ink);margin:14px 0 18px;}
-  .review-article p{
-    color:var(--ink-dim);font-size:16px;line-height:1.9;margin-bottom:16px;max-width:70ch;
-  }
-  .review-article p:last-child{margin-bottom:0;}
-  .review-article.is-note .review-article-body{
-    border-left:3px solid var(--yellow);padding-left:20px;
-  }
-  .review-article.is-quote .review-lead{
-    font-family:'Noto Serif TC',serif;font-weight:700;
-    font-size:19px;line-height:1.7;color:var(--ink);margin-bottom:18px;
-  }
-  @media(min-width:760px){
-    .review-article{grid-template-columns:64px 1fr;gap:28px;padding-top:72px;}
-    .review-article-num{padding-top:6px;}
-    .review-article h4{font-size:26px;}
-  }
-
-  /* ============================================================
-     ITINERARY
-     ============================================================ */
-  .day-subtitle{font-size:13px;color:var(--ink-dim);margin:-20px 0 24px;letter-spacing:0.5px;}
-
-  .stop{
-    display:grid;grid-template-columns:1fr;row-gap:14px;
-    align-items:start;
-    padding:28px 0;border-bottom:1px solid var(--line);
-  }
-  .stop:first-child{border-top:1px solid var(--line);}
-
-  .stop-time{
-    font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:2px;
-    color:var(--ink-dim);padding-top:4px;
-  }
-
-  .stop-name{
-    font-family:'Noto Serif TC',serif;font-weight:900;
-    line-height:1.35;letter-spacing:normal;text-align:left;
-    margin-bottom:16px;text-wrap:balance;
-  }
-  .stop-name.title-normal{font-size:clamp(24px,6vw,36px);}
-  .stop-name.title-long{font-size:clamp(21px,5.3vw,31px);}
-  .stop-name.title-xlong{font-size:clamp(19px,4.8vw,27px);}
-  .stop-name .title-phrase{white-space:nowrap;}
-  .stop-name .title-break{display:block;}
-
-  /* fixed label/value meta grid — same size/weight/color across all fields */
-  .stop-meta{display:flex;flex-direction:column;gap:6px;}
-  .stop-meta-row{
-    display:grid;grid-template-columns:76px minmax(0,1fr);column-gap:14px;
-    align-items:start;font-size:14px;line-height:1.7;
-  }
-  .stop-meta-row .mk{color:var(--ink-dim);}
-  .stop-meta-row .mv{color:var(--ink);}
-
-  .itinerary-note{margin-top:30px;font-size:12.5px;line-height:1.8;color:var(--ink-dim);text-align:left;}
-
-  .stop-note{
-    font-size:16px;line-height:1.8;color:var(--ink-dim);
-    max-width:620px;margin:0;
-  }
-  .stop-meta + .stop-note{margin-top:28px;}
-
-  /* button lives in its own container — spacing controlled here, not by the note's margin */
-  .place-actions{margin-top:34px;}
-  .stop-note + .place-actions{margin-top:26px;}
-
-  .stop-link{
-    display:inline-flex;align-items:center;gap:8px;
-    font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;
-    height:40px;padding:0 20px;border-radius:20px;box-sizing:border-box;
-    background:var(--yellow);color:var(--ink);border:1px solid var(--yellow);
-    transition:background 0.2s ease, color 0.2s ease;
-  }
-  .stop-link:hover,.stop-link:focus-visible{background:var(--ink);color:var(--cream);border-color:var(--ink);outline:none;}
-  .stop-link .arrow{font-size:14px;line-height:1;}
-
-  @media(min-width:760px){
-    .stop{grid-template-columns:100px 1fr;column-gap:28px;padding:40px 0;}
-    .stop-time{padding-top:8px;}
-    .stop-name{margin-bottom:20px;}
-    .stop-name .title-break{display:none;}
-    .stop-meta-row{font-size:16px;grid-template-columns:88px minmax(0,1fr);}
-    .stop-note{font-size:17.5px;}
-    .stop-meta + .stop-note{margin-top:32px;}
-    .place-actions{margin-top:38px;}
-    .stop-note + .place-actions{margin-top:28px;}
-  }
-
-  /* ripple click effect */
-  .ripple-btn {
-    position: relative;
-    overflow: hidden;
-  }
-  .ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,138,0,0.4);
-    transform: scale(0);
-    pointer-events: none;
-    animation: ripple-out 0.6s ease-out;
-  }
-  @keyframes ripple-out {
-    to { transform: scale(3); opacity: 0; }
-  }
-
-  /* ============================================================
      GALLERY
      ============================================================ */
   .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
@@ -408,35 +247,50 @@
   .info-row{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:14.5px;}
   .info-row .k{color:var(--ink-dim);letter-spacing:0.5px;white-space:nowrap;}
   .info-row .v{font-weight:500;text-align:right;}
-  .info-row--long{align-items:flex-start;padding:22px 0;}
-  .info-row--long .v{text-align:left;font-weight:400;line-height:1.75;}
-  @media(min-width:700px){.info-row--long{padding:24px 0;}}
-  .info-note{margin-top:30px;font-size:12.5px;color:var(--ink-dim);max-width:60ch;line-height:1.8;text-align:left;}
+  .info-note{margin-top:24px;font-size:12.5px;color:var(--ink-dim);max-width:60ch;line-height:1.8;}
 
   /* ============================================================
      LOCATION
      ============================================================ */
   .location-grid{display:grid;grid-template-columns:1fr;gap:32px;}
   .location-card{
-    background:var(--ink);color:var(--cream);
+    aspect-ratio:16/11;background:var(--ink);color:var(--cream);
     display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-    gap:14px;padding:56px 32px;border-radius:var(--radius);
+    gap:16px;padding:32px;border-radius:var(--radius);position:relative;overflow:hidden;
     text-decoration:none;cursor:pointer;
   }
+  .radar{position:relative;width:64px;height:64px;display:flex;align-items:center;justify-content:center;}
+  .radar-ring{
+    position:absolute;border:1px solid rgba(244,208,0,0.35);border-radius:50%;
+    animation:radar-pulse 2.6s ease-out infinite;
+  }
+  .radar-ring.r1{width:64px;height:64px;animation-delay:0s;}
+  .radar-ring.r2{width:64px;height:64px;animation-delay:1.3s;}
+  @keyframes radar-pulse{
+    0%{transform:scale(0.3);opacity:0;}
+    30%{opacity:1;}
+    100%{transform:scale(1.6);opacity:0;}
+  }
+  .radar svg{position:relative;z-index:1;width:30px;height:30px;}
   .location-card-title{font-family:'Noto Serif TC',serif;font-weight:900;font-size:24px;letter-spacing:1px;}
   .location-card-sub{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:3px;color:rgba(246,241,228,0.55);text-transform:uppercase;}
   .location-card .btn{margin-top:4px;}
   .location-card .btn.on-dark:hover,.location-card .btn.on-dark:focus-visible{background:var(--cream);color:var(--ink);}
 
-  .transport-list{display:flex;flex-direction:column;gap:0;}
-  .transport-item{
-    display:grid;grid-template-columns:76px 1fr;column-gap:14px;align-items:start;
-    padding:16px 0;border-bottom:1px solid var(--line);
+  /* ripple click effect */
+  .ripple-btn{position:relative;overflow:hidden;}
+  .ripple{
+    position:absolute;border-radius:50%;background:rgba(255,138,0,0.4);
+    transform:scale(0);pointer-events:none;animation:ripple-out 0.6s ease-out;
   }
+  @keyframes ripple-out{ to{ transform:scale(3); opacity:0; } }
+  .transport-list{display:flex;flex-direction:column;gap:0;}
+  .transport-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);}
   .transport-item:first-child{border-top:1px solid var(--line);}
-  .transport-mode{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:1px;color:var(--ink-dim);line-height:1.7;}
-  .transport-desc{font-size:14.5px;line-height:1.7;color:var(--ink);}
-  @media(min-width:760px){.transport-item{grid-template-columns:88px 1fr;}}
+  .transport-mode{font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:1px;color:var(--ink-dim);min-width:64px;padding-top:2px;}
+  .transport-desc{font-size:14.5px;}
+  .location-addr{font-size:15px;margin-bottom:20px;}
+  .location-addr .k{display:block;font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:2px;color:var(--ink-dim);margin-bottom:6px;text-transform:uppercase;}
   @media(min-width:820px){.location-grid{grid-template-columns:1fr 1fr;gap:56px;}}
 
   /* ============================================================
@@ -461,17 +315,9 @@
   .booking{background:var(--ink);color:var(--cream);border-bottom:none;text-align:center;}
   .booking .eyebrow{color:rgba(246,241,228,0.6);justify-content:center;}
   .booking .eyebrow::before{background:var(--yellow);}
-  .booking h2{
-    color:var(--cream);font-size:clamp(32px,6vw,64px);max-width:18ch;margin:0 auto 20px;
-    line-height:1.22;text-align:center;letter-spacing:normal;
-  }
-  .booking h2 .title-phrase{white-space:nowrap;}
-  .booking h2 .title-break{display:block;}
-  @media(min-width:760px){
-    .booking h2{line-height:1.15;}
-    .booking h2 .title-break{display:none;}
-  }
-  .booking p{color:rgba(246,241,228,0.7);max-width:48ch;margin:0 auto 36px;font-size:15px;line-height:1.8;}
+  .booking h2{color:var(--cream);font-size:clamp(32px,6vw,64px);max-width:18ch;margin:0 auto 20px;line-height:1.15;}
+  .booking p{color:rgba(246,241,228,0.7);max-width:48ch;margin:0 auto 36px;font-size:15px;}
+  .booking-note{margin-top:18px;font-size:12px;color:rgba(246,241,228,0.5);}
 
   /* ============================================================
      FOOTER
@@ -481,19 +327,9 @@
   .footer-logo{font-family:'Noto Serif TC',serif;font-weight:900;font-size:20px;}
   .footer-links{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--ink-dim);}
   .footer-links a:hover,.footer-links a:focus-visible{color:var(--ink);}
-  .footer-social{display:flex;gap:16px;}
-  .ig-btn{
-    display:inline-flex;align-items:center;justify-content:center;
-    background:var(--ink);color:var(--cream);border:1px solid var(--ink);
-    border-radius:999px;padding:13px 26px;width:fit-content;
-    font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;
-    transition:background 0.2s ease,color 0.2s ease;
-  }
-  .ig-btn:hover,.ig-btn:focus-visible{background:var(--yellow);color:var(--ink);border-color:var(--yellow);outline:none;}
+  .footer-social{display:flex;gap:16px;font-size:13px;}
   @media(min-width:760px){.footer-top{flex-direction:row;justify-content:space-between;align-items:center;}}
-  .footer-disclaimer{font-size:11.5px;color:var(--ink-dim);line-height:1.8;max-width:70ch;text-align:left;margin-bottom:12px;}
-  .footer-disclaimer:first-of-type{border-top:1px solid var(--line);padding-top:24px;}
-  .footer-disclaimer:last-of-type{margin-bottom:0;}
+  .footer-disclaimer{font-size:11.5px;color:var(--ink-dim);line-height:1.8;border-top:1px solid var(--line);padding-top:24px;max-width:70ch;}
 
   /* ============================================================
      DOT RAIL — signature wayfinding element (desktop only)
@@ -523,81 +359,69 @@
 <script>
 const CONTENT = {
   meta: {
-    siteName: "餘光．台南漁光島民宿",
-    officialUrl: "http://www.yu-guang.com.tw/",
-    instagramUrl: "https://www.instagram.com/mika.checkin/reels/"
+    siteName: "示範旅宿 The Sample Stay",
   },
 
   sectionsEnabled: {
     nav: true,
     hero: true,
-    intro: false,
+    intro: true,
     features: true,
-    rooms: false,
-    review: true,
-    itinerary: true,
-    gallery: false,
+    rooms: true,
+    gallery: true,
     stayInfo: true,
     location: true,
-    faq: false,
+    faq: true,
     booking: true,
     footer: true
   },
 
   nav: {
-    logoText: "餘光 YUGUANG",
+    logoText: "THE SAMPLE STAY",
     links: [
-      { label: "特色重點", href: "#features" },
-      { label: "入住心得", href: "#review" },
-      { label: "兩天一夜路線", href: "#itinerary" },
+      { label: "簡介", href: "#intro" },
+      { label: "特色", href: "#features" },
+      { label: "房型", href: "#rooms" },
+      { label: "相簿", href: "#gallery" },
       { label: "入住資訊", href: "#stay-info" },
-      { label: "交通位置", href: "#location" }
+      { label: "交通", href: "#location" },
+      { label: "常見問題", href: "#faq" }
     ],
-    ctaLabel: "餘光官方網站",
-    ctaHref: "http://www.yu-guang.com.tw/",
-    secondaryLabel: "追蹤今晚住這裡",
-    secondaryHref: "https://www.instagram.com/mika.checkin/reels/"
+    ctaLabel: "立即詢問房型",
+    ctaHref: "#booking"
   },
 
   hero: {
-    kicker: "台南・安平・漁光島（非官方攻略）",
+    kicker: "版型示範・PLACEHOLDER TEMPLATE",
     titleLine1: "在",
-    titleMark: "餘光",
-    titleLine2: "裡，",
-    titleLine3: "留一晚",
-    subtitleParagraphs: [
-      "漁光島巷弄裡的日式旅宿，黑瓦、暈黃牆面與木柵，讓人聯想到京都住宅區安靜而內斂的氛圍。",
-      "距離漁光島海灘約600公尺，適合在這裡留一晚，慢慢感受島上的步調。"
-    ],
-    ctaLabel: "餘光官方網站",
-    ctaHref: "http://www.yu-guang.com.tw/",
-    ctaSecondaryLabel: "追蹤今晚住這裡",
-    ctaSecondaryHref: "https://www.instagram.com/mika.checkin/reels/",
-    imageLabel: "餘光民宿外觀 示意圖",
-    showImage: false,
+    titleMark: "海風",
+    titleLine2: "與慢時光之間",
+    subtitle: "這是一段示意文案：描述這間旅宿的氛圍與定位，例如選址理念、空間調性、或最想留給旅人的第一印象。實際使用時請替換為真實文案。",
+    ctaLabel: "查看房型",
+    ctaHref: "#rooms",
+    ctaSecondaryLabel: "旅宿簡介",
+    ctaSecondaryHref: "#intro",
+    imageLabel: "首頁主視覺 示意圖",
     scrollLabel: "SCROLL"
   },
 
   intro: {
     eyebrow: "旅宿簡介",
-    titleLine1: "把京都建築的氣氛",
-    titleLine2: "搬進漁光島",
+    title: "關於這裡的\n一段示意文字",
     paragraphs: [
-      "據相關介紹，餘光由本業從事空間設計的黃泓元規劃打造，建築以京都風格為概念。黑瓦、暈黃牆面搭配黑色木柵，走進巷弄時，會讓人聯想到日本住宅區安靜而內斂的氛圍。",
-      "目前公開資料顯示，主建築設有「岩、石、根、花、雲」5種房型，另外還有「滝」1棟獨立 Villa。不同房型以自然意象命名，其中「滝 Villa」的設計概念與瀑布、流水意象相互呼應，也是館內相當有特色的房型之一。",
-      "民宿距離漁光島海灘約600公尺，實際步行時間仍會依路線與個人速度而異。整體環境很適合喜歡日式氛圍，或想把旅行步調放慢的旅人。"
+      "這裡放旅宿的核心介紹：成立背景、空間理念、或主人想傳達的生活態度。建議控制在兩到三段，讓讀者快速抓住這間旅宿與其他選擇的差異。",
+      "第二段可以補充更具體的細節，例如建築特色、在地連結、或是旅人普遍會有的體驗感受。所有內容目前皆為示意文字，請替換為實際介紹。"
     ],
-    imageLabel: "日式庭園 示意圖",
-    showImage: false
+    imageLabel: "空間示意圖"
   },
 
   features: {
-    eyebrow: "特色重點",
-    title: "為什麼會想住這裡",
+    eyebrow: "三項特色",
+    title: "為什麼選擇這裡",
     items: [
-      { title: "日式禪風建築", desc: "黑瓦、木柵、暈黃牆面，京都聚落感的外觀在漁光島上相當少見，光是拍照留念就很值得。" },
-      { title: "5 種自然命名房型", desc: "岩、石、根、花、雲、滝，每個房型有不同格局與氛圍，可依人數與喜好挑選。" },
-      { title: "步行可達海灘", desc: "距離漁光島海灘約 600 公尺，看完夕陽走回房間，中間不太需要再靠交通工具。" }
+      { title: "特色亮點一", desc: "示意說明文字，描述這項特色對旅人的實際好處，建議一到兩句話講清楚即可。" },
+      { title: "特色亮點二", desc: "示意說明文字，可以是空間設計、服務細節、或地理位置上的優勢。" },
+      { title: "特色亮點三", desc: "示意說明文字，放最能代表這間旅宿獨特性的一項特色。" }
     ]
   },
 
@@ -606,108 +430,31 @@ const CONTENT = {
     title: "選一個屬於你的房型",
     items: [
       {
-        name: "岩｜榻榻米通鋪房",
-        desc: "大片榻榻米通鋪，浴室與廁所分開設計，適合家庭或親友同住；房內可見日式庭園造景。",
-        price: "價格請洽官網",
-        priceNote: "／晚，實際房價與空房請以官網為準",
-        capacity: "2－4 人",
-        tags: ["榻榻米通鋪", "庭園景觀"],
-        imageLabel: "岩房型 示意圖"
-      },
-      {
-        name: "雲｜頂樓景觀房",
-        desc: "位於館內最高樓層，加大雙人床搭配日式床鋪，樓層視野在全館房型中最為開闊。",
-        price: "價格請洽官網",
-        priceNote: "／晚，實際房價與空房請以官網為準",
+        name: "示範房型 A",
+        desc: "示意描述文字：說明坪數、床型、可容納人數、與空間氛圍等資訊。",
+        price: "示意價格",
+        priceNote: "／晚，實際房價請以官網為準",
         capacity: "2 人",
-        tags: ["加大雙人床", "頂樓視野"],
-        imageLabel: "雲房型 示意圖"
+        tags: ["示意標籤", "示意標籤"],
+        imageLabel: "房型 A 示意圖"
       },
       {
-        name: "滝｜獨立 Villa",
-        desc: "轉譯瀑布意象的獨立 Villa，擁有獨立起居空間與庭院景觀，隱私感在全館中最高，適合想安排度假型住宿的旅客。",
-        price: "價格請洽官網",
-        priceNote: "／晚，實際房價與空房請以官網為準",
+        name: "示範房型 B",
+        desc: "示意描述文字：說明坪數、床型、可容納人數、與空間氛圍等資訊。",
+        price: "示意價格",
+        priceNote: "／晚，實際房價請以官網為準",
         capacity: "2－4 人",
-        tags: ["獨立起居空間", "庭院景觀"],
-        imageLabel: "滝 Villa 示意圖"
-      }
-    ]
-  },
-
-  review: {
-    eyebrow: "入住心得・「岩」房型",
-    title: "這次住起來怎麼樣？",
-    pros: [
-      "大片榻榻米通鋪，一家人可以睡在一起，帶小孩不用擔心從床上掉下來",
-      "房內就能看到日式庭園造景，坐在落地窗旁喝茶吃點心很放鬆",
-      "浴室與廁所分開，兩人同時使用不會互相影響",
-      "入住前管家已提前開好冷氣，一進房就是涼爽空間",
-      "少見提供洗面乳（通常只有洗髮精、沐浴乳）"
-    ],
-    cons: [
-      "榻榻米通鋪占去大面積空間，玄關可放行李的地方比較有限",
-      "浴室沖澡區沒有額外燈光，主要靠外側光源，喜歡明亮空間的人可能要適應",
-      "除濕機運轉聲音較明顯，淺眠者建議睡前先關閉"
-    ],
-    suited: "情侶、夫妻，或喜歡日式氛圍、想安排放鬆小旅行的人。親子入住需留意「岩」房桌子與寢具都直接設置在榻榻米區，小朋友活潑跑跳時要注意避免弄髒。",
-    surprise: "一進房發現管家已提前把冷氣開好，台南夏天真的很熱，這個小細節讓入住當下感受很好；另外這也是第一次入住「有提供洗面乳」的民宿。",
-    fullText: [
-      { h: "這次入住的房型", paragraphs: [
-        "這次入住的是「岩」房型，房內是大片的榻榻米通鋪，也是我們第一次體驗這類型的房型。",
-        "實際睡了一晚覺得滿舒服的，大家可以一起睡在榻榻米上，有帶小朋友的話，也不用太擔心睡覺時會從床上掉下來。"
-      ] },
-      { h: "最喜歡的地方", paragraphs: [
-        "最喜歡的是房間本身的日式氛圍。房內就能看到日式庭園造景，坐在落地窗旁吃點心、喝茶，或只是坐著放空都很舒服。",
-        "另外浴室與廁所是分開的，兩個人同時使用也不會互相影響，這點很方便。",
-        "榻榻米通鋪也是這次很特別的住宿體驗，實際睡過一晚後，比原本想像中更喜歡。"
-      ] },
-      { h: "入住前可以先留意", variant: "note", paragraphs: [
-        "這次分享主要是以我們實際入住的「岩」房型為主，民宿本身還有其他不同房型可以選擇，因此以下感受不一定適用於所有房型。",
-        "因為「岩」房型有大面積的榻榻米通鋪，相對來說玄關可以直接放置行李的空間比較有限，如果攜帶大型行李箱，擺放上會稍微受限；雖然也能搬到榻榻米區，但會比較擔心行李箱輪子把榻榻米弄髒。另外浴室沖澡區沒有額外設置燈光，主要靠外側光源照明，這部分比較看個人習慣，我自己會更喜歡明亮一點的盥洗空間。",
-        "房內的除濕機運轉時聲音會比較明顯，如果是淺眠的人，建議睡覺時可以先關閉。"
-      ] },
-      { h: "推薦給這些人", paragraphs: [
-        "入住一晚後，以我自己的感受來說，這裡滿適合情侶、夫妻，或喜歡日式氛圍、想安排一趟放鬆小旅行的人。",
-        "如果是親子入住，「岩」房有一點可以先留意：桌子、寢具等都直接設置在榻榻米區，如果小朋友比較活潑，吃東西或跑跳時可能需要稍微注意，避免不小心弄髒榻榻米或寢具。",
-        "民宿本身還有多種不同房型，可以依照入住人數、需求及喜好選擇更適合自己的房型。以上為這次實際入住「岩」房後的個人感受與推薦，每個人的住宿習慣與需求不同，提供給大家作為選擇時的參考。"
-      ] },
-      { h: "入住後的小驚喜", variant: "quote",
-        lead: "一進房就發現管家已經提前把冷氣開好了。",
-        paragraphs: [
-          "台南夏天真的很熱，一進房馬上就是涼爽的空間，雖然只是小細節，但入住當下的感受很好。",
-          "另外這也是我第一次住到「有提供洗面乳」的民宿！一般住宿比較常看到洗髮精、沐浴乳，連洗面乳都準備好真的滿少見，萬一剛好忘記帶也不用擔心。"
-        ]
-      }
-    ]
-  },
-
-  itinerary: {
-    eyebrow: "MIKA 這次怎麼玩",
-    title: "兩天一夜路線",
-    closingNote: "以上資訊整理自 Google 地圖，營業時間及店家資訊請以店家最新公告為準。",
-    days: [
-      {
-        label: "Day 1",
-        subtitle: "台中→台南→安平→漁光島→夜市",
-        stops: [
-          { time: "交通", name: "台中 → 台南（火車）→ 搭公車前往安平老街", titleParts: ["台中 → 台南（火車）", "搭公車前往安平老街"] },
-          { time: "美食", name: "鄭家蚵仔煎孔雀蛤大王延平總店", rating: "2.2（842 則）", hours: "10:00－20:30", address: "安平區延平街117號", note: "肚子餓隨便找了一家吃，整體吃起來很普通。", mapHref: "https://maps.app.goo.gl/98CWBaTFAuK5qxKy8?g_st=ic" },
-          { time: "景點", name: "安平樹屋", rating: "4.5（6,947 則）", hours: "08:30－17:30", address: "安平區古堡街104號", note: "帶小孩初次體驗，散步逛逛。", mapHref: "https://maps.app.goo.gl/5VKfDrfidJEaS3qCA?g_st=ic" },
-          { time: "美食", name: "同記安平豆花（安平2店）", rating: "4.3（4,501 則）", hours: "週一～五 10:00－22:00・週末 9:00－22:00", address: "安平區安北路141-6號", mapHref: "https://maps.app.goo.gl/VTuhKhFkg4DRwZ9c7?g_st=ic" },
-          { time: "美食", name: "劉記韭菜盒子", rating: "4.3（978 則）", hours: "週二～日 14:30－18:30", closed: "週一公休", address: "安平區安北路159號", note: "買了韭菜盒跟烙餅，排隊時被其他客人推薦要買烙餅，兩種都覺得蠻好吃的，會再回訪當點心吃。", mapHref: "https://maps.app.goo.gl/rY7Eoamw9Z4EwSCC9?g_st=ic" },
-          { time: "住宿", name: "搭計程車前往漁光島「餘光民宿」入住", titleParts: ["搭計程車前往漁光島", "「餘光民宿」入住"], mapHref: "https://maps.app.goo.gl/VVwjotTV5YZchazU6?g_st=ic" },
-          { time: "美食", name: "武聖夜市", rating: "4.3（25,664 則）", hours: "三、五、六 17:00－24:00", closed: "一二四公休", address: "中西區武聖路69巷", note: "搭計程車前往覓食逛夜市。", mapHref: "https://maps.app.goo.gl/s6fxHUQ7QXZhAhwo7?g_st=ic" }
-        ]
+        tags: ["示意標籤", "示意標籤"],
+        imageLabel: "房型 B 示意圖"
       },
       {
-        label: "Day 2",
-        subtitle: "奇美博物館",
-        stops: [
-          { time: "交通", name: "餘光民宿退房 → 搭計程車前往奇美博物館", titleParts: ["餘光民宿退房", "搭計程車前往奇美博物館"] },
-          { time: "景點", name: "奇美博物館｜《埃及之王：法老》特展", titleParts: ["奇美博物館", "《埃及之王：法老》特展"], rating: "4.7（69,747 則）", hours: "其餘 09:30－17:30", closed: "週三公休", address: "仁德區文華路二段66號", mapHref: "https://maps.app.goo.gl/UVshLN5RdNpuKFDS6?g_st=ic" },
-          { time: "交通", name: "結束台南行程，返回台中" }
-        ]
+        name: "示範房型 C",
+        desc: "示意描述文字：說明坪數、床型、可容納人數、與空間氛圍等資訊。",
+        price: "示意價格",
+        priceNote: "／晚，實際房價請以官網為準",
+        capacity: "4 人",
+        tags: ["示意標籤", "示意標籤"],
+        imageLabel: "房型 C 示意圖"
       }
     ]
   },
@@ -716,12 +463,12 @@ const CONTENT = {
     eyebrow: "空間相簿",
     title: "空間紀錄",
     images: [
-      { label: "外觀 示意圖" },
-      { label: "岩房 示意圖" },
-      { label: "日式庭園 示意圖" },
-      { label: "滝 Villa 示意圖" },
-      { label: "早餐 示意圖" },
-      { label: "公共空間 示意圖" }
+      { label: "示意圖 01" },
+      { label: "示意圖 02" },
+      { label: "示意圖 03" },
+      { label: "示意圖 04" },
+      { label: "示意圖 05" },
+      { label: "示意圖 06" }
     ]
   },
 
@@ -729,27 +476,28 @@ const CONTENT = {
     eyebrow: "入住資訊",
     title: "帶著走的資訊卡",
     facts: [
-      { k: "入住時間", v: "15:00 後" },
-      { k: "退房時間", v: "11:00 前" },
-      { k: "館內設施", v: "免費 Wi-Fi、自行車、電梯、24 小時公共空間" },
-      { k: "早餐", v: "虱目魚粥或牛肉湯（擇一）" },
-      { k: "停車資訊", v: "館內提供 3 格汽車車位、5 格機車車位，不提供保留，依現場空位使用，車庫門限高 185 公分。" },
-      { k: "房型數量", v: "5 種房型・1 棟獨立 Villa" }
+      { k: "入住時間", v: "示意時間，如 15:00 後" },
+      { k: "退房時間", v: "示意時間，如 11:00 前" },
+      { k: "提供服務", v: "示意內容，如 Wi-Fi、停車位" },
+      { k: "早餐", v: "示意內容，是否含早餐" },
+      { k: "房型數量", v: "示意數字" },
+      { k: "官方聯絡", v: "示意聯絡方式" }
     ],
-    note: "以上資訊整理自公開報導與官方網站，實際內容與費用請以官網最新公告為準。"
+    note: "以上皆為示意資訊，正式使用前請替換為真實入住規則與資料，並提醒讀者以官網最新公告為準。"
   },
 
   location: {
     eyebrow: "交通位置",
     title: "如何抵達",
     addressLabel: "地址",
-    address: "台南市安平區漁光路119巷8號",
-    districtLabel: "餘光民宿",
-    mapLabel: "TAINAN, TAIWAN",
-    mapUrl: "https://maps.app.goo.gl/VVwjotTV5YZchazU6?g_st=ic",
+    address: "示意地址，請替換為實際地址",
+    districtLabel: "示意地區名稱",
+    mapLabel: "點擊開啟 GOOGLE 地圖（示意，未串接真實連結）",
+    mapUrl: "",
     transport: [
-      { mode: "公車", desc: "搭乘 2 路於「濱海站」下車；或搭 14、17、19、88 路至億載金城站，步行約 15 分鐘。" },
-      { mode: "高鐵", desc: "轉乘免費接駁車「台南市政府線」至終點站，再轉搭計程車約 25－30 分鐘。" }
+      { mode: "自行開車", desc: "示意交通說明文字，例如可提供停車位或鄰近路線提示。" },
+      { mode: "大眾運輸", desc: "示意交通說明文字，例如鄰近車站、公車站牌與步行時間。" },
+      { mode: "接駁服務", desc: "示意交通說明文字，如有提供接駁服務可在此說明預約方式。" }
     ]
   },
 
@@ -757,31 +505,34 @@ const CONTENT = {
     eyebrow: "常見問題",
     title: "入住前，你可能想知道",
     items: [
-      { q: "有提供停車位嗎？", a: "館內提供 3 格汽車車位、5 格機車車位，不提供保留，依現場空位使用；車位滿了的話，民宿後方空地與公園旁未畫紅線處也可停車，步行回民宿約 2 分鐘。" },
-      { q: "早餐吃什麼？", a: "可以在虱目魚粥或牛肉湯中擇一，都是台南在地口味。" },
-      { q: "可以租機車代步嗎？", a: "館內提供 Gogoro 外租服務，每日約 $750－$850，連續租 3－4 天有優惠價約 $350／日。" },
-      { q: "距離海灘會很遠嗎？", a: "不會，距離漁光島海灘約步行 600 公尺，看完夕陽走回民宿很方便。" }
+      { q: "示意問題一：可以提早入住嗎？", a: "示意回答文字，說明彈性入住的條件與注意事項。" },
+      { q: "示意問題二：是否提供停車位？", a: "示意回答文字，說明停車相關資訊。" },
+      { q: "示意問題三：可以攜帶寵物嗎？", a: "示意回答文字，說明寵物政策。" },
+      { q: "示意問題四：取消政策為何？", a: "示意回答文字，說明取消與退款規則。" }
     ]
   },
 
   booking: {
     eyebrow: "準備好了嗎",
-    titleLine1: "找一個時間，",
-    titleLine2: "去漁光島住一晚",
-    subtitle: "房價、空房與最新優惠請以官方網站公告為準。",
-    ctaLabel: "立即預訂",
-    ctaHref: "https://www.booking-owlnest.com/餘光?lang=zh_TW&adult=1&child=0&infant=0"
+    title: "找一個時間，慢下來住一晚",
+    subtitle: "示意文字：邀請讀者採取行動的一段話，可以放上限定優惠、季節推薦或簡短的行動呼籲。",
+    ctaLabel: "前往訂房（Placeholder）",
+    ctaHref: "#",
+    note: "此按鈕目前為 placeholder 連結，尚未串接真實訂房系統。"
   },
 
   footer: {
-    logoText: "餘光 YUGUANG",
-    social: [
-      { label: "Mika 今晚住這裡", href: "https://www.instagram.com/mika.checkin/reels/" }
+    logoText: "THE SAMPLE STAY",
+    links: [
+      { label: "旅宿簡介", href: "#intro" },
+      { label: "房型介紹", href: "#rooms" },
+      { label: "常見問題", href: "#faq" }
     ],
-    disclaimerParagraphs: [
-      "此頁面為 Mika 今晚住這裡 製作，非「餘光．台南漁光島民宿」官方網站。",
-      "本頁內容依實際入住體驗及公開資訊整理，房型、設施與營運資訊可能有所調整，實際內容請以餘光民宿官方公告為準。"
-    ]
+    social: [
+      { label: "Instagram", href: "#" },
+      { label: "Facebook", href: "#" }
+    ],
+    disclaimer: "本頁面為一頁式旅宿網站模板，用於展示版面與排版結構。頁面中的旅宿名稱、文案、價格、照片與地址皆為示意內容，不代表任何真實旅宿，請勿作為實際訂房依據。"
   }
 };
 </script>
@@ -812,21 +563,17 @@ const CONTENT = {
     var navLinks = (n.links||[]).map(function(l){
       return '<a href="'+l.href+'">'+esc(l.label)+'</a>';
     }).join('');
-    var navCta = n.ctaLabel ? '<a class="btn nav-cta" href="'+n.ctaHref+'" target="_blank" rel="noopener noreferrer">'+esc(n.ctaLabel)+'</a>' : '';
-    var navCtaMobile = n.ctaLabel ? '<a class="btn" href="'+n.ctaHref+'" target="_blank" rel="noopener noreferrer">'+esc(n.ctaLabel)+'</a>' : '';
-    var navSecondaryMobile = n.secondaryLabel ? '<a class="nav-mobile-secondary" href="'+n.secondaryHref+'" target="_blank" rel="noopener noreferrer">'+esc(n.secondaryLabel)+'</a>' : '';
     out.push(
       '<header class="site-nav">'+
         '<div class="nav-row">'+
           '<a class="nav-logo" href="#top">'+esc(n.logoText)+'</a>'+
           '<nav class="nav-links" aria-label="主要導覽">'+navLinks+'</nav>'+
-          navCta+
+          (n.ctaLabel ? '<a class="btn nav-cta" href="'+n.ctaHref+'">'+esc(n.ctaLabel)+'</a>' : '')+
           '<button class="nav-toggle" aria-label="開啟選單" aria-expanded="false" id="navToggle"><span></span></button>'+
         '</div>'+
         '<nav class="nav-mobile" id="navMobile" aria-label="行動版導覽">'+
           navLinks+
-          navCtaMobile+
-          navSecondaryMobile+
+          (n.ctaLabel ? '<a class="btn" href="'+n.ctaHref+'">'+esc(n.ctaLabel)+'</a>' : '')+
         '</nav>'+
       '</header>'
     );
@@ -835,24 +582,21 @@ const CONTENT = {
   /* ---------- HERO ---------- */
   if (S.hero && CONTENT.hero) {
     var h = CONTENT.hero;
-    var heroShowImage = h.showImage !== false;
-    var heroTitle = '<span class="title-phrase">'+esc(h.titleLine1)+'<mark>'+esc(h.titleMark)+'</mark>'+esc(h.titleLine2)+'</span>'+
-      '<wbr><br class="title-break">'+
-      '<span class="title-phrase">'+esc(h.titleLine3)+'</span>';
-    var heroSubParas = (h.subtitleParagraphs||[]).map(function(p){ return '<p class="hero-sub reveal">'+esc(p)+'</p>'; }).join('');
     out.push(
-      '<section class="hero' + (heroShowImage ? '' : ' hero--no-image') + '" id="top">'+
+      '<section class="hero" id="top">'+
         '<div class="hero-copy">'+
           '<div class="eyebrow reveal">'+esc(h.kicker)+'</div>'+
-          '<h1 class="hero-title reveal">'+heroTitle+'</h1>'+
-          heroSubParas+
+          '<h1 class="hero-title reveal">'+esc(h.titleLine1)+'<mark>'+esc(h.titleMark)+'</mark>'+esc(h.titleLine2)+'</h1>'+
+          '<p class="hero-sub reveal">'+esc(h.subtitle)+'</p>'+
           '<div class="hero-actions reveal">'+
-            '<a class="btn" href="'+h.ctaHref+'" target="_blank" rel="noopener noreferrer">'+esc(h.ctaLabel)+'</a>'+
-            '<a class="btn ghost" href="'+h.ctaSecondaryHref+'" target="_blank" rel="noopener noreferrer">'+esc(h.ctaSecondaryLabel)+'</a>'+
+            '<a class="btn" href="'+h.ctaHref+'">'+esc(h.ctaLabel)+'</a>'+
+            '<a class="btn ghost" href="'+h.ctaSecondaryHref+'">'+esc(h.ctaSecondaryLabel)+'</a>'+
           '</div>'+
-          (heroShowImage ? '' : '<div class="scroll-hint scroll-hint--inline"><span>'+esc(h.scrollLabel)+'</span><span class="line"></span></div>')+
         '</div>'+
-        (heroShowImage ? '<div class="hero-media">'+ph(h.imageLabel)+'<div class="scroll-hint"><span>'+esc(h.scrollLabel)+'</span><span class="line"></span></div></div>' : '')+
+        '<div class="hero-media">'+
+          ph(h.imageLabel)+
+          '<div class="scroll-hint"><span>'+esc(h.scrollLabel)+'</span><span class="line"></span></div>'+
+        '</div>'+
       '</section>'
     );
   }
@@ -860,18 +604,15 @@ const CONTENT = {
   /* ---------- INTRO ---------- */
   if (S.intro && CONTENT.intro && (CONTENT.intro.paragraphs||[]).length) {
     var i = CONTENT.intro;
-    var introShowImage = i.showImage !== false;
     var paras = i.paragraphs.map(function(p){ return '<p>'+esc(p)+'</p>'; }).join('');
-    var introTitle = '<span class="intro-title-line">'+esc(i.titleLine1)+'</span><br>'+
-      '<span class="intro-title-line">'+esc(i.titleLine2)+'</span>';
     out.push(
       '<section id="intro">'+
         '<div class="wrap">'+
-          '<div class="intro-grid' + (introShowImage ? '' : ' intro-grid--text-only') + '">'+
-            (introShowImage ? '<div class="intro-media reveal">'+ph(i.imageLabel)+'</div>' : '')+
+          '<div class="intro-grid">'+
+            '<div class="intro-media reveal">'+ph(i.imageLabel)+'</div>'+
             '<div class="intro-text reveal">'+
               '<div class="eyebrow">'+esc(i.eyebrow)+'</div>'+
-              '<h2 class="section-title" style="margin-bottom:24px;">'+introTitle+'</h2>'+
+              '<h2 class="section-title" style="margin-bottom:24px;">'+esc(i.title).split("\n").join('<br>')+'</h2>'+
               paras+
             '</div>'+
           '</div>'+
@@ -930,54 +671,6 @@ const CONTENT = {
     );
   }
 
-  /* ---------- REVIEW ---------- */
-  if (S.review && CONTENT.review && ((CONTENT.review.pros||[]).length || (CONTENT.review.fullText||[]).length)) {
-    var rv = CONTENT.review;
-    var prosLi = (rv.pros||[]).map(function(t){ return '<li>'+esc(t)+'</li>'; }).join('');
-    var consLi = (rv.cons||[]).map(function(t){ return '<li>'+esc(t)+'</li>'; }).join('');
-    var fullBlocks = (rv.fullText||[]).map(function(b, idx){
-      var num = String(idx + 1).padStart ? String(idx + 1).padStart(2, '0') : ('0' + (idx + 1)).slice(-2);
-      var variantClass = b.variant === 'note' ? ' is-note' : (b.variant === 'quote' ? ' is-quote' : '');
-      var lead = b.lead ? '<p class="review-lead">'+esc(b.lead)+'</p>' : '';
-      var paras = (b.paragraphs||[]).map(function(p){ return '<p>'+esc(p)+'</p>'; }).join('');
-      return '<article class="review-article'+variantClass+'">'+
-        '<div class="review-article-num">'+num+'</div>'+
-        '<div class="review-article-body">'+
-          '<h4>'+esc(b.h)+'</h4>'+
-          '<div class="review-article-rule"></div>'+
-          lead+
-          paras+
-        '</div>'+
-      '</article>';
-    }).join('');
-    out.push(
-      '<section id="review">'+
-        '<div class="wrap">'+
-          '<div class="section-head reveal">'+
-            '<div class="eyebrow">'+esc(rv.eyebrow)+'</div>'+
-            '<h2 class="section-title">'+esc(rv.title)+'</h2>'+
-          '</div>'+
-          '<div class="reveal">'+
-            '<div class="tab-buttons" role="tablist">'+
-              '<button class="tab-btn active" data-tabset="review" data-tab="summary">重點整理</button>'+
-              '<button class="tab-btn" data-tabset="review" data-tab="full">完整心得</button>'+
-            '</div>'+
-            '<div class="tab-panel active" data-tabset="review" data-tab="summary">'+
-              (prosLi || consLi ? '<div class="pros-cons">'+
-                (prosLi ? '<div class="pc-card pros"><h3>喜歡的地方</h3><ul>'+prosLi+'</ul></div>' : '')+
-                (consLi ? '<div class="pc-card cons"><h3>入住前留意</h3><ul>'+consLi+'</ul></div>' : '')+
-              '</div>' : '')+
-              (rv.suited ? '<div class="review-note"><b>適合誰：</b>'+esc(rv.suited)+'</div>' : '')+
-              (rv.surprise ? '<div class="review-note"><b>小驚喜：</b>'+esc(rv.surprise)+'</div>' : '')+
-            '</div>'+
-            '<div class="tab-panel review-full" data-tabset="review" data-tab="full">'+fullBlocks+'</div>'+
-          '</div>'+
-        '</div>'+
-      '</section>'
-    );
-  }
-
-
   /* ---------- GALLERY ---------- */
   if (S.gallery && CONTENT.gallery && (CONTENT.gallery.images||[]).length) {
     var g = CONTENT.gallery;
@@ -999,8 +692,7 @@ const CONTENT = {
   if (S.stayInfo && CONTENT.stayInfo && (CONTENT.stayInfo.facts||[]).length) {
     var si = CONTENT.stayInfo;
     var rows = si.facts.map(function(fc){
-      var longCls = (fc.v && fc.v.length > 20) ? ' info-row--long' : '';
-      return '<div class="info-row'+longCls+'"><span class="k">'+esc(fc.k)+'</span><span class="v">'+esc(fc.v)+'</span></div>';
+      return '<div class="info-row"><span class="k">'+esc(fc.k)+'</span><span class="v">'+esc(fc.v)+'</span></div>';
     }).join('');
     out.push(
       '<section id="stay-info">'+
@@ -1019,17 +711,19 @@ const CONTENT = {
   /* ---------- LOCATION ---------- */
   if (S.location && CONTENT.location) {
     var loc = CONTENT.location;
-    var addressRow = loc.address
-      ? '<div class="transport-item"><div class="transport-mode">'+esc(loc.addressLabel || '地址')+'</div><div class="transport-desc">'+esc(loc.address)+'</div></div>'
-      : '';
-    var trans = addressRow + (loc.transport||[]).map(function(t){
+    var trans = (loc.transport||[]).map(function(t){
       return '<div class="transport-item"><div class="transport-mode">'+esc(t.mode)+'</div><div class="transport-desc">'+esc(t.desc)+'</div></div>';
     }).join('');
-    var mapInner = '<div class="location-card-title">'+esc(loc.districtLabel || '')+'</div>'+
+    var mapPinSvg = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">'+
+      '<path d="M12 2C7.8 2 4.4 5.4 4.4 9.6C4.4 15 12 22 12 22C12 22 19.6 15 19.6 9.6C19.6 5.4 16.2 2 12 2Z" fill="#F4D000" stroke="#F6F1E4" stroke-width="1.2"/>'+
+      '<circle cx="12" cy="9.6" r="3" fill="#15130F"/>'+
+    '</svg>';
+    var mapInner = '<div class="radar"><span class="radar-ring r1"></span><span class="radar-ring r2"></span>'+mapPinSvg+'</div>'+
+      '<div class="location-card-title">'+esc(loc.districtLabel || '')+'</div>'+
       '<div class="location-card-sub">'+esc(loc.mapLabel)+'</div>'+
-      '<span class="btn on-dark">開啟導航 <span class="arrow">→</span></span>';
+      '<span class="btn on-dark">在 Google 地圖開啟 ↗</span>';
     var mapBlock = loc.mapUrl
-      ? '<a class="location-card ripple-btn" href="'+loc.mapUrl+'" target="_blank" rel="noopener noreferrer" aria-label="開啟導航前往'+esc(CONTENT.meta.siteName)+'">'+mapInner+'</a>'
+      ? '<a class="location-card ripple-btn" href="'+loc.mapUrl+'" target="_blank" rel="noopener" aria-label="在 Google 地圖開啟'+esc(CONTENT.meta.siteName)+'">'+mapInner+'</a>'
       : '<div class="location-card">'+mapInner+'</div>';
     out.push(
       '<section id="location">'+
@@ -1041,76 +735,9 @@ const CONTENT = {
           '<div class="location-grid">'+
             '<div class="reveal">'+mapBlock+'</div>'+
             '<div class="reveal">'+
+              '<div class="location-addr"><span class="k">'+esc(loc.addressLabel)+'</span>'+esc(loc.address)+'</div>'+
               '<div class="transport-list">'+trans+'</div>'+
             '</div>'+
-          '</div>'+
-        '</div>'+
-      '</section>'
-    );
-  }
-
-  /* ---------- ITINERARY ---------- */
-  if (S.itinerary && CONTENT.itinerary && (CONTENT.itinerary.days||[]).length) {
-    var it = CONTENT.itinerary;
-
-    function stopTitleSizeClass(text){
-      var len = (text||'').length;
-      if (len >= 14) return 'title-xlong';
-      if (len >= 9) return 'title-long';
-      return 'title-normal';
-    }
-    function renderStopTitle(s){
-      var parts = s.titleParts;
-      var fullText = (parts && parts.length) ? parts.join('') : (s.name || '');
-      var sizeCls = stopTitleSizeClass(fullText);
-      var inner;
-      if (parts && parts.length) {
-        inner = parts.map(function(p, i){
-          return '<span class="title-phrase">'+esc(p)+'</span>' + (i < parts.length - 1 ? '<wbr><br class="title-break">' : '');
-        }).join('');
-      } else {
-        inner = esc(s.name);
-      }
-      return '<div class="stop-name '+sizeCls+'">'+inner+'</div>';
-    }
-
-    var dayButtons = it.days.map(function(d, idx){
-      return '<button class="tab-btn'+(idx===0?' active':'')+'" data-tabset="itinerary" data-tab="day'+idx+'">'+esc(d.label)+'</button>';
-    }).join('');
-    var dayPanels = it.days.map(function(d, idx){
-      var stops = (d.stops||[]).map(function(s){
-        var metaRows = [];
-        if (s.rating) metaRows.push('<div class="stop-meta-row"><span class="mk">評分</span><span class="mv">'+esc(s.rating)+'</span></div>');
-        if (s.hours) metaRows.push('<div class="stop-meta-row"><span class="mk">營業時間</span><span class="mv">'+esc(s.hours)+'</span></div>');
-        if (s.closed) metaRows.push('<div class="stop-meta-row"><span class="mk">公休日</span><span class="mv">'+esc(s.closed)+'</span></div>');
-        if (s.address) metaRows.push('<div class="stop-meta-row"><span class="mk">地址</span><span class="mv">'+esc(s.address)+'</span></div>');
-        var meta = metaRows.join('');
-        return '<div class="stop">'+
-          '<div class="stop-time">'+esc(s.time)+'</div>'+
-          '<div>'+
-            renderStopTitle(s)+
-            (meta ? '<div class="stop-meta">'+meta+'</div>' : '')+
-            (s.note ? '<div class="stop-note">'+esc(s.note)+'</div>' : '')+
-            (s.mapHref ? '<div class="place-actions"><a class="stop-link ripple-btn" href="'+s.mapHref+'" target="_blank" rel="noopener noreferrer">開啟導航 <span class="arrow">→</span></a></div>' : '')+
-          '</div>'+
-        '</div>';
-      }).join('');
-      return '<div class="tab-panel'+(idx===0?' active':'')+'" data-tabset="itinerary" data-tab="day'+idx+'">'+
-        (d.subtitle ? '<div class="day-subtitle">'+esc(d.subtitle)+'</div>' : '')+
-        stops+
-      '</div>';
-    }).join('');
-    out.push(
-      '<section id="itinerary">'+
-        '<div class="wrap">'+
-          '<div class="section-head reveal">'+
-            '<div class="eyebrow">'+esc(it.eyebrow)+'</div>'+
-            '<h2 class="section-title">'+esc(it.title)+'</h2>'+
-          '</div>'+
-          '<div class="reveal">'+
-            '<div class="tab-buttons" role="tablist">'+dayButtons+'</div>'+
-            dayPanels+
-            (it.closingNote ? '<p class="itinerary-note">'+esc(it.closingNote)+'</p>' : '')+
           '</div>'+
         '</div>'+
       '</section>'
@@ -1142,16 +769,14 @@ const CONTENT = {
   /* ---------- BOOKING CTA ---------- */
   if (S.booking && CONTENT.booking) {
     var b = CONTENT.booking;
-    var bookingTitle = '<span class="title-phrase">'+esc(b.titleLine1)+'</span>'+
-      '<wbr><br class="title-break">'+
-      '<span class="title-phrase">'+esc(b.titleLine2)+'</span>';
     out.push(
       '<section class="booking" id="booking">'+
         '<div class="wrap reveal">'+
           '<div class="eyebrow">'+esc(b.eyebrow)+'</div>'+
-          '<h2>'+bookingTitle+'</h2>'+
+          '<h2>'+esc(b.title)+'</h2>'+
           '<p>'+esc(b.subtitle)+'</p>'+
-          '<a class="btn on-dark" href="'+b.ctaHref+'" target="_blank" rel="noopener noreferrer">'+esc(b.ctaLabel)+'</a>'+
+          '<a class="btn on-dark" href="'+b.ctaHref+'">'+esc(b.ctaLabel)+'</a>'+
+          '<div class="booking-note">'+esc(b.note)+'</div>'+
         '</div>'+
       '</section>'
     );
@@ -1161,17 +786,16 @@ const CONTENT = {
   if (S.footer && CONTENT.footer) {
     var ft = CONTENT.footer;
     var flinks = (ft.links||[]).map(function(l){ return '<a href="'+l.href+'">'+esc(l.label)+'</a>'; }).join('');
-    var fsocial = (ft.social||[]).map(function(s){ return '<a class="ig-btn" href="'+s.href+'" target="_blank" rel="noopener noreferrer">'+esc(s.label)+'</a>'; }).join('');
-    var fdisclaimer = (ft.disclaimerParagraphs||[]).map(function(p){ return '<p class="footer-disclaimer">'+esc(p)+'</p>'; }).join('');
+    var fsocial = (ft.social||[]).map(function(s){ return '<a href="'+s.href+'">'+esc(s.label)+'</a>'; }).join('');
     out.push(
       '<footer class="site-footer">'+
         '<div class="wrap">'+
           '<div class="footer-top">'+
             '<div class="footer-logo">'+esc(ft.logoText)+'</div>'+
-            (flinks ? '<div class="footer-links">'+flinks+'</div>' : '')+
-            (fsocial ? '<div class="footer-social">'+fsocial+'</div>' : '')+
+            '<div class="footer-links">'+flinks+'</div>'+
+            '<div class="footer-social">'+fsocial+'</div>'+
           '</div>'+
-          fdisclaimer+
+          '<p class="footer-disclaimer">'+esc(ft.disclaimer)+'</p>'+
         '</div>'+
       '</footer>'
     );
@@ -1180,13 +804,6 @@ const CONTENT = {
   document.getElementById('app').innerHTML = out.join('');
 
   /* ---------- interactions ---------- */
-
-  // prune nav links whose target section isn't actually in the DOM
-  // (covers both a disabled section AND a section skipped due to empty data)
-  document.querySelectorAll('.nav-links a[href^="#"], .nav-mobile a[href^="#"]').forEach(function(a){
-    var id = a.getAttribute('href').slice(1);
-    if (id && !document.getElementById(id)) { a.remove(); }
-  });
 
   // ripple click effect (event-delegated for any .ripple-btn)
   document.addEventListener('click', function(e){
@@ -1203,18 +820,26 @@ const CONTENT = {
     span.addEventListener('animationend', function(){ span.remove(); });
   });
 
-  // generic tabset toggle (drives review + itinerary tab groups)
-  document.querySelectorAll('.tab-btn[data-tabset]').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var group = btn.getAttribute('data-tabset');
-      var tab = btn.getAttribute('data-tab');
-      document.querySelectorAll('.tab-btn[data-tabset="'+group+'"]').forEach(function(b){ b.classList.remove('active'); });
-      document.querySelectorAll('.tab-panel[data-tabset="'+group+'"]').forEach(function(p){ p.classList.remove('active'); });
-      btn.classList.add('active');
-      var panel = document.querySelector('.tab-panel[data-tabset="'+group+'"][data-tab="'+tab+'"]');
-      if (panel) panel.classList.add('active');
+  // detect common in-app browsers (LINE, Instagram, Facebook/Messenger, WeChat)
+  // where Google Maps short links often fail to open — show a dismissible notice
+  (function(){
+    var ua = navigator.userAgent || '';
+    var isInApp = /Line\//i.test(ua) || /Instagram/i.test(ua) || /FBAN|FBAV|FB_IAB/i.test(ua) || /MicroMessenger/i.test(ua) || /MessengerForiOS/i.test(ua);
+    var alreadyDismissed = false;
+    try { alreadyDismissed = sessionStorage.getItem('iabBannerDismissed') === '1'; } catch(e){}
+    if (!isInApp || alreadyDismissed) return;
+
+    var banner = document.createElement('div');
+    banner.className = 'iab-banner';
+    banner.innerHTML =
+      '<span>偵測到您可能透過 App 內建瀏覽器開啟本頁，地圖連結可能無法正常開啟。建議點右上角「⋯」選擇「在瀏覽器中開啟」。</span>'+
+      '<button class="iab-close" aria-label="關閉提示">×</button>';
+    document.body.insertBefore(banner, document.body.firstChild);
+    banner.querySelector('.iab-close').addEventListener('click', function(){
+      banner.remove();
+      try { sessionStorage.setItem('iabBannerDismissed', '1'); } catch(e){}
     });
-  });
+  })();
 
   // mobile nav toggle
   var navToggle = document.getElementById('navToggle');
